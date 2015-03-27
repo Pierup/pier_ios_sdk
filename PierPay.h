@@ -80,19 +80,4 @@ typedef void (^payWithPierComplete)(NSDictionary *result, NSError *error);
  */
 + (void)handleOpenURL:(NSURL *)url withCompletion:(payWithPierComplete)completion;
 
-/**
- * Pier App 内部支付使用，Merchant App用不到。打包时候注释掉这个方法。
- * pay by pier without password
- * name:            Required     Type       Description
- * 1.phone           NO          NSString   user phone.
- * 2.merchant_id     NO          NSString   your id in pier.
- * 3.amount          YES          NSString   amount.
- * 4.currency        YES          NSString   tThe code of currency,such as 'USD','RMB' and so on.The default value is 'USD'.
- * 5.server_url      YES          NSString   your server url of accepting auth token,amount,currency, and making the real payment with the pier server SDK.
- * 6.session_token   YES          NSString   your server url of accepting auth token,amount,currency, and making the real payment with the pier server SDK.
- * 7.order_id        YES          NSString   merchant orderID
- *
- */
-+ (void)payWith:(NSDictionary *)charge delegate:(id)delegate;
-
 @end
